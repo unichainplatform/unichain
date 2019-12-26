@@ -27,12 +27,12 @@ fi
 # Create fake Go workspace if it doesn't exist yet.
 workspace="$PWD/build/_workspace"
 root="$PWD"
-ftdir="$workspace/src/github.com/unichainplatform"
+unidir="$workspace/src/github.com/unichainplatform"
 bindir="$PWD/build/bin"
 mkdir -p $bindir
-if [ ! -L "$ftdir/unichain" ]; then
-    mkdir -p "$ftdir"
-    cd "$ftdir"
+if [ ! -L "$unidir/unichain" ]; then
+    mkdir -p "$unidir"
+    cd "$unidir"
     ln -s ../../../../../. unichain
     cd "$root"
 fi
