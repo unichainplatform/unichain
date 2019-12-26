@@ -1,15 +1,24 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+build/bin
+build/_workspace
+build/test_sdk
+build/testdatadir
 
-# Test binary, built with `go test -c`
-*.test
+*.bak
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+*.a
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+.DS_Store
+
+# IdeaIDE
+.idea
+
+# VS Code
+.vscode
+
+profile.out
+
+coverage.out
+
+dist
+
+commit_hash.txt

@@ -1,0 +1,64 @@
+[{
+	"comment": "unichain.founder create account candidate0007 & transfer 1000000 uni",
+	"priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+	"type": "createaccount",
+	"from": "unichain.founder",
+	"to": "unichain.account",
+	"gas": 30000000,
+	"value": 1000000000000000000000000,
+	"payload": {
+		"accountName": "candidate0007",
+		"founder": "candidate0007",
+		"publicKey": "0x047db227d7094ce215c3a0f57e1bcc732551fe351f94249471934567e0f5dc1bf795962b8cccb87a2eb56b29fbe37d614e2f4c3c45b789ae4f1f51f4cb21972ffd",
+		"description": "candidate0007 account"
+	},
+	"succeed": true
+}, {
+	"comment": "candidate0007 exittakeover & transfer 0 uni, wrong from",
+	"priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+	"type": "exittakeover",
+	"from": "candidate0007",
+	"to": "unichain.dpos",
+	"gas": 30000000,
+	"value": 0,
+	"succeed": false,
+	"contain": "no permission"
+}, {
+	"comment": "unichain.founder exittakeover & transfer 0 uni, wrong receipt",
+	"priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+	"type": "exittakeover",
+	"from": "unichain.founder",
+	"to": "unichain.account",
+	"gas": 30000000,
+	"value": 0,
+	"succeed": false,
+	"contain": "unichain.dpos"
+}, {
+	"comment": "unichain.founder exittakeover & transfer 1000 uni, value zero",
+	"priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+	"type": "exittakeover",
+	"from": "unichain.founder",
+	"to": "unichain.dpos",
+	"gas": 30000000,
+	"value": 1000000000000000000000,
+	"succeed": false,
+	"contain": "is zero"
+}, {
+	"comment": "unichain.founder exittakeover & transfer 0 uni",
+	"priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+	"type": "exittakeover",
+	"from": "unichain.founder",
+	"to": "unichain.dpos",
+	"gas": 30000000,
+	"value": 0,
+	"succeed": true
+}, {
+	"comment": "unichain.founder exittakeover & transfer 0 uni",
+	"priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+	"type": "exittakeover",
+	"from": "unichain.founder",
+	"to": "unichain.dpos",
+	"gas": 30000000,
+	"value": 0,
+	"succeed": true
+}]

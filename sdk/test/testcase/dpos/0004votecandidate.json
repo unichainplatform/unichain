@@ -1,0 +1,149 @@
+[{
+    "comment": "unichain.founder create account candidate0004 & transfer 1000000 uni",
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "type": "createaccount",
+    "from": "unichain.founder",
+    "to": "unichain.account",
+    "gas": 30000000,
+    "value": 1000000000000000000000000,
+    "payload": {
+        "accountName": "candidate0004",
+        "founder": "candidate0004",
+        "publicKey": "0x047db227d7094ce215c3a0f57e1bcc732551fe351f94249471934567e0f5dc1bf795962b8cccb87a2eb56b29fbe37d614e2f4c3c45b789ae4f1f51f4cb21972ffd",
+        "description": "candidate0004 account"
+    },
+    "succeed": true
+},
+{
+    "comment": "unichain.founder votecandidate unichain.founder & transfer 1000 uni, wrong receipt",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.account",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "unichain.founder",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "unichain.dpos"
+},
+{
+    "comment": "unichain.founder votecandidate unichain.account & transfer 1000 uni, not exist",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "unichain.account",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "not exist"
+},
+{
+    "comment": "unichain.founder votecandidate unichain.founder & transfer 1000 uni, value not zero",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 1000000000000000000000,
+    "payload": {
+        "Candidate": "unichain.founder",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "is zero"
+},
+{
+    "comment": "unichain.founder votecandidate unichain.founder & transfer 1000 uni, insufficient",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "unichain.founder",
+        "Stake": 1000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "insufficient"
+},
+{
+    "comment": "unichain.founder votecandidate unichain.founder & transfer 100000000000 uni, non divisibility",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "unichain.founder",
+        "Stake": 100000000000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "invalid vote stake"
+},
+{
+    "comment": "unichain.founder votecandidate unichain.founder & transfer 1000 uni, non divisibility",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "unichain.founder",
+        "Stake": 1001000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain": "non divisibility"
+},
+{
+    "comment": "unichain.founder votecandidate unichain.founder & transfer 2000 uni",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "unichain.founder",
+        "Stake": 2000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+{
+    "comment": "candidate0004 regcandidate & transfer 10000 uni",
+    "type": "regcandidate",
+    "from": "candidate0004",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 10000000000000000000000,
+    "payload": {
+        "Info": "www.candidate0004.com"
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": true
+},
+{
+    "comment": "unichain.founder votecandidate candidate0004 & transfer 2000 uni",
+    "type": "votecandidate",
+    "from": "unichain.founder",
+    "to": "unichain.dpos",
+    "gas": 30000000,
+    "value": 0,
+    "payload": {
+        "Candidate": "candidate0004",
+        "Stake": 2000000000000000000000
+    },
+    "priv": "289c2857d4598e37fb9647507e47a309d6133539bf21a8b9cb6df88fd5232032",
+    "succeed": false,
+    "contain":"insufficient available quantity"
+}
+]
