@@ -33,15 +33,15 @@ import (
 
 var nodeConfig = node.Config{
 	P2PConfig:       &p2p.Config{},
-	IPCPath:         "ftfinder.ipc",
+	IPCPath:         "unifinder.ipc",
 	P2PNodeDatabase: "nodedb",
 }
 
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
-	Use:   "ftfinder",
-	Short: "ftfinder is a unichain node discoverer",
-	Long:  `ftfinder is a unichain node discoverer`,
+	Use:   "unifinder",
+	Short: "unifinder is a unichain node discoverer",
+	Long:  `unifinder is a unichain node discoverer`,
 
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
@@ -61,7 +61,7 @@ var RootCmd = &cobra.Command{
 		err := srv.DiscoverOnly()
 		defer srv.Stop()
 		if err != nil {
-			log.Error("ftfinder start failed", "error", err)
+			log.Error("unifinder start failed", "error", err)
 			return
 		}
 		rpcListener, rpcHandler, err := rpc.StartIPCEndpoint(nodeConfig.IPCEndpoint(), []rpc.API{
