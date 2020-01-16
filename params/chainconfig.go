@@ -133,7 +133,7 @@ var DefaultChainconfig = &ChainConfig{
 	AssetName:        "unichain.asset",
 	DposName:         "unichain.dpos",
 	FeeName:          "unichain.fee",
-	SysToken:         "ftoken",
+	SysToken:         "unitoken",
 }
 
 func (cfg *ChainConfig) Copy() *ChainConfig {

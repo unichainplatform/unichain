@@ -37,7 +37,7 @@ import (
 	"github.com/unichainplatform/unichain/utils/fdb"
 )
 
-// FtService implements the unichain service.
+// UniService implements the unichain service.
 type UniService struct {
 	config       *Config
 	chainConfig  *params.ChainConfig

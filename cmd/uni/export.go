@@ -62,14 +62,14 @@ func exportChain(args []string) error {
 	}
 
 	ctx := stack.GetNodeConfig()
-	ftsrv, err := uniservice.New(ctx, uniCfgInstance.UniServiceCfg)
+	unisrv, err := uniservice.New(ctx, uniCfgInstance.UniServiceCfg)
 	if err != nil {
 		return err
 	}
 
 	fp := args[0]
 	if len(args) < 3 {
-		err = exportBlockChain(ftsrv.BlockChain(), fp)
+		err = exportBlockChain(unisrv.BlockChain(), fp)
 	} else {
 		first, ferr := strconv.ParseInt(args[1], 10, 64)
 		last, lerr := strconv.ParseInt(args[2], 10, 64)
@@ -79,7 +79,7 @@ func exportChain(args []string) error {
 		if first < 0 || last < 0 {
 			return errors.New("Export error: block number must be greater than 0")
 		}
-		err = exportAppendBlockChain(ftsrv.BlockChain(), fp, uint64(first), uint64(last))
+		err = exportAppendBlockChain(unisrv.BlockChain(), fp, uint64(first), uint64(last))
 	}
 	log.Info("Export done in ", "time", time.Since(start))
 	return err

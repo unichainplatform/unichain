@@ -79,8 +79,8 @@ func TestGetTransactionReceiptByHash(t *testing.T) {
 
 	})
 }
-func TestFTGasPrice(t *testing.T) {
-	Convey("ft_gasPrice", t, func() {
+func TestUniGasPrice(t *testing.T) {
+	Convey("uni_gasPrice", t, func() {
 		gasprice, err := api.GasPrice()
 		So(err, ShouldBeNil)
 		So(gasprice, ShouldNotBeNil)
@@ -88,7 +88,7 @@ func TestFTGasPrice(t *testing.T) {
 }
 
 func TestGetChainConfig(t *testing.T) {
-	Convey("ft_chainConfig", t, func() {
+	Convey("uni_chainConfig", t, func() {
 		cfg, err := api.GetChainConfig()
 		So(err, ShouldBeNil)
 		So(cfg, ShouldNotBeNil)
@@ -96,7 +96,7 @@ func TestGetChainConfig(t *testing.T) {
 }
 
 // func TestGetGenesis(t *testing.T) {
-// 	Convey("ft_chainConfig", t, func() {
+// 	Convey("uni_chainConfig", t, func() {
 // 		api := NewAPI(rpchost)
 // 		cfg, err := api.GetGenesis()
 // 		So(err, ShouldBeNil)
